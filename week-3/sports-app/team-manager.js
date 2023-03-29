@@ -8,14 +8,31 @@ const teams = [
     new Team ('Bells Hells', 'Mister the Ape', '9')
 ]
 
-const getTeams = () => {
-    return teams; 
+export const getTeams = () => {
+    const message = '-- DISPLAYING TEAMS --'
+    let teamDisplay = '' 
+    teams.forEach(team => {
+        teamDisplay += `
+Name: ${team.name}
+Mascot: ${team.mascot}
+Player Count: ${team.playerCount}
+        `
+    })
+    return `${message} ${teamDisplay}`
 }
 
-export const getTeam = (name) => {
-    return teams.find(name)
+export const getTeam = (e) => {
+    const findTeam = teams.find(item => item.name === e)
+    return `-- DISPLAYING A SINGLE TEAM --
+Name: ${findTeam.name}
+Mascot: ${findTeam.mascot}
+Player Count: ${findTeam.playerCount}`
 }
 
-const displayTeam = (team) => {
-    return `Name: ${team.name}`
+export const displayTeam = ({name, mascot, count}) => {
+    return `-- DISPLAYING A SINGLE TEAM -- \n
+            Name: ${name} \n
+            Mascot: ${mascot} \n
+            Player Count: ${count}
+           `
 }
