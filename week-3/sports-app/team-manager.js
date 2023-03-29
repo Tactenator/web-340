@@ -22,17 +22,14 @@ Player Count: ${team.playerCount}
 }
 
 export const getTeam = (e) => {
-    const findTeam = teams.find(item => item.name === e)
+     return teams.find(item => item.name === e)
+ 
+}
+
+export const displayTeam = (name) => {
+    const findTeam = getTeam(name)
     return `-- DISPLAYING A SINGLE TEAM --
 Name: ${findTeam.name}
 Mascot: ${findTeam.mascot}
-Player Count: ${findTeam.playerCount}`
-}
-
-export const displayTeam = ({name, mascot, count}) => {
-    return `-- DISPLAYING A SINGLE TEAM -- \n
-            Name: ${name} \n
-            Mascot: ${mascot} \n
-            Player Count: ${count}
-           `
+Player Count: ${findTeam.playerCount} \n`
 }
