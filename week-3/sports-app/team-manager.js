@@ -18,7 +18,7 @@ Mascot: ${team.mascot}
 Player Count: ${team.playerCount}
         `
     })
-    return `${message} ${teamDisplay}`
+    return ` \n ${message} ${teamDisplay} \n`
 }
 
 export const getTeam = (e) => {
